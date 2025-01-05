@@ -1,12 +1,19 @@
 #include <stdio.h>
-
-char* triangleRectangle(int a, int b, int c){
-    if(a*a + b*b == c*c) return "C'est un triangle rectangle.\n";
-    else return "Ce n'est PAS un triangle rectangle.\n";
+ 
+int estTriangleRectangle(int a, int b, int c){
+    if(a*a + b*b == c*c) {
+        printf("Le triangle a = %d, b = %d, c = %d, est rectangle.\n", a, b, c);
+        return 1;
+    }
+    else{
+        printf("Le triangle a = %d, b = %d, c = %d, n'est pas rectangle.\n", a, b, c);   
+        return 0;
+    }
 }
 
 int main(){
-    char* phrase = triangleRectangle(3, 4, 6);
-    printf("%s", phrase);
+    estTriangleRectangle(3, 4, 5); //Cas positif
+    estTriangleRectangle(3, 4, 6); //Cas négatif
+
     return 0;
 }
